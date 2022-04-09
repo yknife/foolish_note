@@ -1,0 +1,1 @@
+https://docs.jboss.org/hibernate/stable/core.old/reference/en/html/querysql-namedqueries.html
