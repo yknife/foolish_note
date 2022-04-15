@@ -1,2 +1,2 @@
 # foolish_note
-record my daily coding note
+record my daily coding
