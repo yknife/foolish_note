@@ -1,7 +1,15 @@
 ### mac切换root用户
 
+* 切换到root用户
+
 ```shell
 sudo -i
+```
+
+* 切回普通用户
+
+```sh
+su - username
 ```
 
 
