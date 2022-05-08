@@ -139,3 +139,72 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-featu
 
 
 ## 3、ApplicationRunner 与 CommandLineRunner
+
+
+
+## 各种自定义初始化组件例子
+
+* ApplicationContextInitializer
+
+  ```java
+  public class MyApplicationContextInitializer implements ApplicationContextInitializer {
+      @Override
+      public void initialize(ConfigurableApplicationContext applicationContext) {
+          System.out.println("MyApplicationContextInitializer正在初始化。");
+      }
+  }
+  ```
+
+* ApplicationListener
+
+  ```java
+  public class MyApplicationListener implements ApplicationListener<ApplicationContextInitializedEvent> {
+  
+      @Override
+      public void onApplicationEvent(ApplicationContextInitializedEvent event) {
+          System.out.println("MyApplicationListener监听到"+event.toString()+"事件");
+      }
+  }
+  ```
+
+* SpringApplicationRunListener
+
+  ```java
+  public class MyApplicationRunListener implements SpringApplicationRunListener {
+  
+      private final SpringApplication application;
+  		//必须制定构造方法，否则会报错
+      public MyApplicationRunListener(SpringApplication application, String[] args) {
+          this.application = application;
+      }
+  
+      @Override
+      public void started(ConfigurableApplicationContext context, Duration timeTaken) {
+          System.out.println("MyApplicationRunListener监听到application已经started,耗时"+timeTaken.toString());
+      }
+  }
+  ```
+
+* ApplicationRunner
+
+  ```java
+  @Component
+  public class MyApplicationRunner implements ApplicationRunner {
+      @Override
+      public void run(ApplicationArguments args) throws Exception {
+          System.out.println("MyApplicationRunner已经运行");
+      }
+  }
+  ```
+
+* CommandLineRunner
+
+  ```java
+  @Component
+  public class MyCommandLineRunner implements CommandLineRunner {
+      @Override
+      public void run(String... args) throws Exception {
+          System.out.println("MyCommandLineRunner已运行。");
+      }
+  }
+  ```
