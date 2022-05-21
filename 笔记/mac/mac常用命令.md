@@ -12,6 +12,14 @@ sudo -i
 su - username
 ```
 
+* 查看端口进程号
+
+```sh
+lsof -i:6379
+```
+
+
+
 
 
 
