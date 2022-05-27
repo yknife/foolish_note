@@ -2082,7 +2082,7 @@ public class SGExpressionRoot {
 
 ~~~~java
 @Component
-public class SGSuccessHandler implements AuthenticationSuccessHandler {
+public class SGSuccessHandler implements i {
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
