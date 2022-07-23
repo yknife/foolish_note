@@ -10,6 +10,11 @@
   brew --version
   ```
 
-  
+* 安装homebrew并切换国内镜像
 
+  ```sh
+  /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+  ```
+
+  
 
