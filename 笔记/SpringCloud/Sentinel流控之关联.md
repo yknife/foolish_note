@@ -37,4 +37,7 @@ HOMEWORK：
 
 链路：只记录指定链路上的流量（指定资源从入口资源进来的流量，如果达到阈值，就进行限流)【API级别的针对来源】
 
+[链路在github上issue](https://github.com/alibaba/Sentinel/issues/1213)
+
+
 
