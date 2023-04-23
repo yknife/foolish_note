@@ -31,3 +31,29 @@ def main(args: Array[String]): Unit = {
   context.stop()
 }
 ```
+
+### 区别于sortByKey
+
+sortByKey:在一个(K,V)的 RDD 上调用，K 必须实现 Ordered 接口(特质)，返回一个按照 key 进行排序 的
+
+```scala
+def main(args: Array[String]): Unit = {
+  val conf: SparkConf = new SparkConf()
+    .setMaster("local[*]")
+    .setAppName("Spark")
+  val context = new SparkContext(conf)
+  val rdd = context.makeRDD(List(("1",1),("2",1),("11",1)),2)
+  val rddNew = rdd.sortByKey(true)
+  rddNew.collect().foreach(println)
+  context.stop()
+}
+```
+
+结果
+
+```log
+(1,1)
+(11,1)
+(2,1)
+```
+
