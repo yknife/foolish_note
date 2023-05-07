@@ -7,4 +7,6 @@ println("****************")
 rdd.foreach(println)
 ```
 
+RDD方法为什么叫做算子的原因
+
 ![image-20230427000646875](044行动算子之Foreach.assets/image-20230427000646875.png)
