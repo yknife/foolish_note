@@ -1,3 +1,12 @@
+### 创建DataFrame
+
+```sh
+# 方式一：从文件中读取
+val df = spark.read.json("data/json/user.json")
+# 方式二：使用RDD转换
+val df = sc.makeRDD(List(("zh1",31),("zh2",32))).toDF("username","age")
+```
+
 ### RDD转DateFrame
 
 ```sh
