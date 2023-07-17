@@ -59,3 +59,34 @@ object MyReceiverStreamExample {
 ```
 
 ### Kafka数据源
+
+```scala
+def main(args: Array[String]): Unit = {
+  val sparkConf = new
+      SparkConf().setMaster("local[*]").setAppName("KafkaSource")
+  val ssc = new StreamingContext(sparkConf, Seconds(3))
+  val kafkaPara: Map[String, Object] = Map[String, Object](
+    //设置broker-list
+    ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG ->
+      "localhost:9092",
+    //设置消费组
+    ConsumerConfig.GROUP_ID_CONFIG -> "test_group",
+    "key.deserializer" ->
+      "org.apache.kafka.common.serialization.StringDeserializer",
+    "value.deserializer" ->
+      "org.apache.kafka.common.serialization.StringDeserializer"
+  )
+
+  val kafkaDStream: InputDStream[ConsumerRecord[String, String]] = KafkaUtils.createDirectStream[String, String](
+    ssc,
+    //本地策略，采集节点与计算节点如何做匹配
+    //PreferConsistent:Use this in most cases, it will consistently distribute partitions across all executors.
+    LocationStrategies.PreferConsistent,
+    //消费者策略
+    ConsumerStrategies.Subscribe[String, String](Set("test_topic"), kafkaPara)
+  )
+  kafkaDStream.map(_.value()).print()
+  ssc.start()
+  ssc.awaitTermination()
+}
+```
