@@ -1,12 +1,12 @@
 1. 基本数据类型
 
-   ![image-20220220213501042](/Users/yknife/Documents/笔记/截图/image-20220220213501042.png)
+   ![image-20220220213501042](hive表结构的增删改查.assets/image-20220220213501042.png)
 
 ​		对于 Hive 的 String 类型相当于数据库的 varchar 类型，该类型是一个可变的字符串，不 过它不能声明其中最多能存储多少个字符，理论上它可以存储 2GB 的字符数。
 
 2. 集合数据类型
 
-   ![image-20220220213706071](/Users/yknife/Documents/笔记/截图/image-20220220213706071.png)
+   ![image-20220220213706071](hive表结构的增删改查.assets/image-20220220213706071.png)
 
 ​	Hive 有三种复杂数据类型 ARRAY、MAP 和 STRUCT。ARRAY 和 MAP 与 Java 中的 Array 和 Map 类似，而 STRUCT 与 C 语言中的 Struct 类似，它封装了一个命名字段集合，复杂数据 类型允许任意层次的嵌套。
 
