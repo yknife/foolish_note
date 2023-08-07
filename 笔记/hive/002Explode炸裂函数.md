@@ -45,7 +45,9 @@ lateral view explode(split(category,",")) movie_info_tmp as category_name
 select explode(split(category,",")) from movie_info 
 ```
 
+### 列转行
 
+与其叫列转行，不如叫一行变多行
 
 
 
