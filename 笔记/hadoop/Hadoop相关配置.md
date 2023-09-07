@@ -32,6 +32,7 @@
 4. 配置hadoop环境变量
 
    ```shell
+   vim /etc/profile.d/my_env.sh
    #HADOOP_HOME
    export HADOOP_HOME=/usr/local/hadoop-3.3.1
    export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
@@ -41,6 +42,7 @@
    export YARN_RESOURCEMANAGER_USER=root
    export YARN_NODEMANAGER_USER=root
    #编辑环境变量后分发到每个节点，并source
+   source /etc/profile
    ```
 
 5. 集群规划
