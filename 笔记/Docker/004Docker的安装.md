@@ -56,6 +56,8 @@ yum remove docker \
 **（2）下载需要的安装包**
 
 ```shell
+yum -y install gcc
+yum -y install gcc-c++
 yum install -y yum-utils
 1
 ```
@@ -107,6 +109,11 @@ systemctl enable docker
 ![在这里插入图片描述](004Docker的安装.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5namhhaQ==,size_16,color_FFFFFF,t_70-20231006214937069.png)
 
 下载hello-world镜像进行测试
+
+```sh
+docker run hello-world
+```
+
 ![在这里插入图片描述](004Docker的安装.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5namhhaQ==,size_16,color_FFFFFF,t_70-20231006214937121.png)
 查看下载的hello world镜像
 
