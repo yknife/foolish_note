@@ -26,7 +26,7 @@ Flink的Standalone集群并不支持单作业模式部署。因为单作业模�
    nc -lk 7777
    ```
 
-2. 进入到Flink的安装路径下，将应用程序的jar包放到lib/目录下。
+2. 进入到Flink的安装路径下，将应用程序的jar包放到lib/目录下。(唯一需要把jar放在lib目录的提交方式)
 
    ```sh
    mv FlinkTutorial-1.0-SNAPSHOT.jar lib/
