@@ -95,7 +95,7 @@
 
    ```sh
    # 对比单作业模式：bin/flink run -d -t yarn-per-job -c org.example.flink.StreamWordCount /u01/ysw/hello-flink-1.0-SNAPSHOT-all.jar 
-   bin/flink run-application -t yarn-application -c org.example.flink.StreamWordCount /u01/ysw/hello-flink-1.0-SNAPSHOT-all.jar 
+   bin/flink run-application -d -t yarn-application -p 2 -c org.example.flink.StreamWordCount /u01/ysw/hello-flink-1.0-SNAPSHOT-all.jar 
    ```
 
 2. 在命令行中查看或取消作业。
