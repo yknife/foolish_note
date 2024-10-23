@@ -60,3 +60,13 @@ spring.profiles.group.production[1]=prodmq
 使用：--spring.profiles.active=production  激活
 ```
 
+## 4、YAML配置
+
+```yaml
+spring:
+  profiles:
+    active: dev
+```
+
+
+
